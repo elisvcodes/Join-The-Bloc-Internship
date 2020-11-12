@@ -1,12 +1,14 @@
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask import Flask
+from flask_cors import CORS
 from flask_restful import Api, Resource, reqparse
 import scripts.jobs_to_db as jobs_to_db
 import scripts.retrieve_from_db
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 args = reqparse.RequestParser()
 args.add_argument('job_title', type=str, help='Job name is required')

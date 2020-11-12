@@ -21,7 +21,7 @@ function Form({ description, handleDescriptionChange, location, handleLocationCh
               placeholder='Search by location' />
           </div>
           <div className="input-field third-wrap">
-            <button className="btn-search" type="button" onClick={onSubmit} >Search</button>
+            <button className="btn-search" type="submit" onClick={onSubmit} >Search</button>
           </div>
         </div>
       </form>

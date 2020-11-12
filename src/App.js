@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchForm from './componenets/Form.js';
 import JobLists from './componenets/JobLists'
 import axios from 'axios'
@@ -11,7 +11,7 @@ function App() {
 
 
   //get data from github job API (fetching by description and location)
-  const url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${description}&location=${location}`
+  const url = `http://127.0.0.1:5000/api/v1?location=${location}&job_title=${description}`
   const getPosts = async () => {
     await axios
       .get(url)
@@ -56,7 +56,7 @@ function App() {
       />
       {
         !!posts?.length &&
-          posts.map((job) => <JobLists key={job.id} job={job} />) //map through each job
+        posts.map((job) => <JobLists key={job[0]} job={job} />) //map through each job
       }
 
     </div>
