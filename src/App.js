@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchForm from './componenets/Form.js';
 import JobLists from './componenets/JobLists'
+import Navbar from './componenets/Navbar';
 import axios from 'axios'
 
 
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <div>
+    <Navbar />
       <SearchForm
         description={description}
         handleDescriptionChange={handleDescriptionChange}
