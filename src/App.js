@@ -70,6 +70,9 @@ function App() {
         companyLogo={job[7]}
          job={job} />) //map through each job
       }
+      {  
+        posts.length? <p></p>: <p className='Error-Message text-red-600 text-center'>No result found with such inputs</p>}
+      
 
     </div>
   )
