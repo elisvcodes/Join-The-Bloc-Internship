@@ -11,7 +11,7 @@ function Form({ description, handleDescriptionChange, location, handleLocationCh
               onChange={handleDescriptionChange}
               value={description.description}
               type="text"
-              placeholder='Enter jobs description' />
+              placeholder='Enter job description' />
           </div>
           <div className="input-field second-wrap">
             <input id="location"

@@ -11,7 +11,7 @@ function App() {
   const [location, setLocation] = useState('')
 
 
-  //get data from github job API (fetching by description and location)
+  //get data from database table (fetching by description and location)
   const url = `http://127.0.0.1:5000/api/v1?location=${location}&job_title=${description}`
   const getPosts = async () => {
     await axios
@@ -58,8 +58,21 @@ function App() {
       />
       {
         !!posts?.length &&
-        posts.map((job) => <JobLists key={job[0]} job={job} />) //map through each job
+        posts.map((job) => 
+        <JobLists 
+        key={job[0]}
+        jobName={job[1]}
+        companyName={job[2]}
+        jobDescription={job[3]}
+        jobApplication={job[4]}
+        location={job[5]}
+        jobURL={job[6]}
+        companyLogo={job[7]}
+         job={job} />) //map through each job
       }
+      {  
+        posts.length? <p></p>: <p className='Error-Message text-red-600 text-center'>No result found with such inputs</p>}
+      
 
     </div>
   )
